@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casual Gamer - Uma gameplay Casual de jogos eletrônicos</title>
+    <link rel="shortcut icon" href="../images/channel_icon.jpg" type="image/x-icon">
+    <style>
+        /* Configurações Base */
+
+        * {
+            padding: 0px;
+            margin: 0px;
+            border: 0px;
+        }
+        #iderro3 {
+            display: none;
+        }
+
+        /* Para Smartphones */
+
+        @media (max-width: 1023px) {
+
+        }
+
+        /* Notebooks ou TVs menores*/
+
+        @media (min-width: 1024px) {
+
+        }
+
+        /* Telas maiores */
+
+        @media (min-width: 2160px) {
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div class="meus_videos">
+            
+        </div>
+        <div class="deu_erro">
+            <p id="iderro2" class="deu_erro" onclick="tentativa2()">Nenhum vídeo?(Tentar servidor 2)</p>
+            <p id="iderro3" class="deu_erro" onclick="tentativa3()">Nenhum vídeo?(Tentar servidor 3)</p>
+        </div>
+    </main>
+    <footer>
+        
+    </footer>
+</body>
+<script>
+    fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCaEPnWNVcMB50JqNzh3dOwA&maxResults=10&order=date&key=AIzaSyCNs_4OuZa4C7TZA9Nh6bDtHpJx8Hg6aeM")
+    .then((result)=>{
+        return result.json()
+    }).then((data)=>{
+        console.log(data)
+        let videos = data.items
+        let MeusVideos = document.querySelector(".meus_videos")
+        for(video of videos){
+            MeusVideos.innerHTML += `
+                <a href="https://www.youtube.com/watch?v=${video.id.videoId}" target="_blank">
+                    <img src="${video.snippet.thumbnails.high.url}">
+                <p>${video.snippet.title}</a>
+            `
+        }
+    })
+
+    function tentativa2() {
+        fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCaEPnWNVcMB50JqNzh3dOwA&maxResults=10&order=date&key=AIzaSyCUBas1bkTgGv0AqlUCWTTMmRIOZ1QFfuY")
+        .then((result)=>{
+            return result.json()
+        }).then((data)=>{
+            console.log(data)
+            let videos = data.items
+            let MeusVideos = document.querySelector(".meus_videos")
+            for(video of videos){
+                MeusVideos.innerHTML += `
+                    <a href="https://www.youtube.com/watch?v=${video.id.videoId}" target="_blank">
+                        <img src="${video.snippet.thumbnails.high.url}">
+                    <p>${video.snippet.title}</a>
+                `
+            }
+        })
+
+        var botao
+        var next
+
+        botao = document.getElementById("iderro2")
+        next = document.getElementById("iderro3")
+        botao.style.display="none";
+        next.style.display="block";
+    }
+</script>
+</html>

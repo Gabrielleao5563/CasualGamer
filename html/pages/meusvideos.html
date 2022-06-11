@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casual Gamer - Uma gameplay Casual de jogos eletrônicos</title>
+    <title>Casual Gamer - Envios</title>
     <link rel="shortcut icon" href="../images/channel_icon.jpg" type="image/x-icon">
     <style>
         /* Configurações Base */
@@ -138,109 +138,67 @@
 
         }
     </style>
+    <style>
+        p#get_button {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: blue;
+            text-decoration: lightblue underline;
+            font-size: 130%;
+            cursor: pointer;
+            font-weight: bolder;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1 class="logo_header">Casual Gamer</h1>
     </header>
     <nav style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; background-color: rgb(50, 50, 50);">
+        <a class="nav" target="_self" href="index.html">Voltar</a>
         <a class="nav" target="_blank" href="https://www.youtube.com/channel/UCaEPnWNVcMB50JqNzh3dOwA">Ver no Youtube</a>
-        <a class="nav" target="_self" href="meusvideos.html">Meus Vídeos</a>
     </nav>
     <main>
         <br>
         <br>
-        <h2 class="most_recent">Meus vídeos mais recentes</h2>
+        <h2 class="most_recent">Meus Videos</h2>
         <br>
         <div class="meus_videos">
-            
+
         </div>
         <br>
-        <br>
-        <div class="deu_erro">
-            <p id="iderro2" class="deu_erro" onclick="tentativa2()">Nenhum vídeo?(Tentar servidor 2)</p>
-            <p id="iderro3" class="deu_erro" onclick="tentativa3()">Nenhum vídeo?(Tentar servidor 3)</p>
-        </div>
-        <br>
-        <br>
+        <p id="get_button" onclick="get_videos()">VER</p>
     </main>
     <footer style="background-color: rgb(50, 50, 50);">
-        <p style="color: white; text-align: center;">Criado por Gabriel Leão</p>
+        <p style="color: white; font-family: Arial, Helvetica, sans-serif; text-align: center;">Criado por Gabriel Leão</p>
     </footer>
 </body>
-<!-- API número 1-->
 <script>
-    fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCaEPnWNVcMB50JqNzh3dOwA&maxResults=10&order=date&key=AIzaSyCNs_4OuZa4C7TZA9Nh6bDtHpJx8Hg6aeM")
-    .then((result)=>{
-        return result.json()
-    }).then((data)=>{
-        console.log(data)
-        let videos = data.items
-        let MeusVideos = document.querySelector(".meus_videos")
-        for(video of videos){
-            MeusVideos.innerHTML += `
-                <div class="video_div">
-                    <a class="video_link" href="https://www.youtube.com/watch?v=${video.id.videoId}" target="_blank">
-                        <img class="video_thumb" src="${video.snippet.thumbnails.high.url}">
-                    <p class="video_title" style="color: white;">${video.snippet.title}</a>
-            `
-        }
-    })
-</script>
-<!-- API número 2-->
-<script>
-    function tentativa2() {
-        fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCaEPnWNVcMB50JqNzh3dOwA&maxResults=10&order=date&key=AIzaSyCUBas1bkTgGv0AqlUCWTTMmRIOZ1QFfuY")
+    let nextPageToken = ""
+    function get_videos() {
+        fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCaEPnWNVcMB50JqNzh3dOwA&maxResults=10&order=date&key=AIzaSyBEWMC1jET6l9tx-XPAz30YBywoWjsK5Hw&pageToken="+nextPageToken)
         .then((result)=>{
             return result.json()
         }).then((data)=>{
             console.log(data)
             let videos = data.items
+            nextPageToken = data.nextPageToken
             let MeusVideos = document.querySelector(".meus_videos")
             for(video of videos){
                 MeusVideos.innerHTML += `
                     <div class="video_div">
                         <a class="video_link" href="https://www.youtube.com/watch?v=${video.id.videoId}" target="_blank">
                             <img class="video_thumb" src="${video.snippet.thumbnails.high.url}">
-                        <p class="video_title">${video.snippet.title}</a>
+                        <p class="video_title" style="color: white;">${video.snippet.title}</a>
                 `
             }
         })
 
-        var botao
-        var next
+        var get_button
 
-        botao = document.getElementById("iderro2")
-        next = document.getElementById("iderro3")
-        botao.style.display="none";
-        next.style.display="block";
-    
-    }
-</script>
-<!-- API número 3-->
-<script>
-    function tentativa3() {
-        fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCaEPnWNVcMB50JqNzh3dOwA&maxResults=10&order=date&key=AIzaSyDLCyYvYNtiNldO2XptazQ8NW9HqDX_uFM")
-        .then((result)=>{
-            return result.json()
-        }).then((data)=>{
-            console.log(data)
-            let videos = data.items
-            let MeusVideos = document.querySelector(".meus_videos")
-            for(video of videos){
-                MeusVideos.innerHTML += `
-                    <div class="video_div">
-                        <a class="video_link" href="https://www.youtube.com/watch?v=${video.id.videoId}" target="_blank">
-                            <img class="video_thumb" src="${video.snippet.thumbnails.high.url}">
-                        <p class="video_title">${video.snippet.title}</a>
-                `
-            }
-        })
+        button = document.getElementById("get_button")
 
-        var botao
-
-        botao = document.getElementById("iderro3")
-        botao.style.display="none";
+        button.innerHTML="VER MAIS...";
     }
 </script>
 </html>

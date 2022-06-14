@@ -189,7 +189,7 @@
             for(video of videos){
                 MeusVideos.innerHTML += `
                     <div class="video_div">
-                        <a class="video_link" href="../playlists/${video.snippet.title}" target="_self">
+                        <a class="video_link" href="https://www.youtube.com/playlist?list=${video.id}" target="_blank">
                             <img class="video_thumb" src="${video.snippet.thumbnails.high.url}">
                         <p class="video_title" style="color: white;">${video.snippet.title}</a>
                 `

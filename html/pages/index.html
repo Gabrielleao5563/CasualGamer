@@ -180,7 +180,7 @@
         for(video of videos){
             MeusVideos.innerHTML += `
                 <div class="video_div">
-                    <a class="video_link" href="https://www.youtube.com/watch?v=${video.id.videoId}" target="_blank">
+                    <a class="video_link" href="https://youtu.be/${video.id.videoId}" target="_blank">
                         <img class="video_thumb" src="${video.snippet.thumbnails.high.url}">
                     <p class="video_title" style="color: white;">${video.snippet.title}</a>
             `
@@ -200,7 +200,7 @@
             for(video of videos){
                 MeusVideos.innerHTML += `
                     <div class="video_div">
-                        <a class="video_link" href="https://www.youtube.com/watch?v=${video.id.videoId}" target="_blank">
+                        <a class="video_link" href="https://youtu.be/${video.id.videoId}" target="_blank">
                             <img class="video_thumb" src="${video.snippet.thumbnails.high.url}">
                         <p class="video_title">${video.snippet.title}</a>
                 `
@@ -230,7 +230,7 @@
             for(video of videos){
                 MeusVideos.innerHTML += `
                     <div class="video_div">
-                        <a class="video_link" href="https://www.youtube.com/watch?v=${video.id.videoId}" target="_blank">
+                        <a class="video_link" href="https://youtu.be/${video.id.videoId}" target="_blank">
                             <img class="video_thumb" src="${video.snippet.thumbnails.high.url}">
                         <p class="video_title">${video.snippet.title}</a>
                 `

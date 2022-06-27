@@ -1,246 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!--Meta dados-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casual Gamer - Uma gameplay Casual de jogos eletrônicos</title>
     <link rel="shortcut icon" href="../images/channel_icon.jpg" type="image/x-icon">
-    <style>
-        /* Configurações Base */
-
-        * {
-            padding: 0px;
-            margin: 0px;
-            border: 0px;
-        }
-        #iderro3 {
-            display: none;
-        }
-        #iderro4 {
-            display: none;
-        }
-        #iderro5 {
-            display: none;
-        }
-        #iderro6 {
-            display: none;
-        }
-        div.flex2 {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-around;
-        }
-        header {
-            background-color: rgb(50, 50, 50);
-        }
-        h1.logo_header {
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bolder;
-            text-align: center;
-        }
-        div.meus_videos {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-around;
-        }
-        a.nav {
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bolder;
-            text-decoration: none;
-            padding: 8px;
-            border-radius: 7px;
-            transition-duration: 0.3s;
-        }
-        a.nav:hover {
-            color: rgb(238, 75, 75);
-            background-color: black;
-            transition-duration: 0.3s;
-        }
-        p#iderro2, #iderro3, #iderro4, #iderro5, #iderro6 {
-            font-family: Arial, Helvetica, sans-serif;
-            color: blue;
-            text-decoration: underline lightblue;
-            text-align: center;
-            cursor: pointer;
-        }
-        p#iderro2:hover, #iderro3:hover, #iderro4:hover, #iderro5:hover, #iderro6:hover {
-            text-decoration: underline blue;
-        }
-        p.video_title {
-            color: white;
-            background-color: rgba(50, 50, 50, 0.700);
-        }
-        div.video_div {
-            margin-bottom: 2%;
-            margin-left: 1%;
-            margin-right: 1%;
-        }
-        a.video_link {
-            text-decoration: none;
-            color: white;
-        }
-        main {
-            background-image: linear-gradient(to right, rgba(255, 255, 0, 0.541), rgba(255, 0, 0, 0.479));
-        }
-        h2.most_recent {
-            text-align: center;
-            color: black;
-            font-weight: bolder;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        /* Para Smartphones */
-
-        @media (max-width: 1023px) {
-            a.video_link {
-                width: 95%;
-                text-decoration: none;
-                margin: auto;
-            }
-            img.video_thumb {
-                width: 100%;
-            }
-            p.video_title {
-                font-family: Arial, Helvetica, sans-serif;
-                color: white;
-                text-align: center;
-                font-weight: bolder;
-            }
-            div#a {
-                width: 95%;
-            }
-            div#b {
-                width: 95%;
-            }
-        }
-
-        /* Notebooks ou TVs menores*/
-
-        @media (min-width: 1024px) {
-            div#a {
-                width: 50%;
-            }
-            div#b {
-                width: 50%;
-            }
-        }
-
-        /* Telas maiores */
-
-        @media (min-width: 2160px) {
-
-        }
-    </style>
+    <!--CSS-->
+    <link rel="stylesheet" href="../../css/index.css">
 </head>
 <body>
-    <header>
-        <h1 class="logo_header">Casual Gamer</h1>
-    </header>
-    <nav style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; background-color: rgb(50, 50, 50);">
-        <a class="nav" target="_self" href="playlists.html">Playlists</a>
-        <a class="nav" target="_self" href="meusvideos.html">Meus Vídeos</a>
-    </nav>
+    <!--Cabeçalho-->
+    <!--Corpo do site-->
     <main>
         <br>
+        <h2 class="my_videos_text">Meus Vídeos</h2>
         <br>
-        <h2 class="most_recent">Meus vídeos mais recentes</h2>
+        <!--Recentes-->
+        <section class="recent">
+            <br>
+            <br>
+            <!--Vídeos-->
+            <div class="meus_videos">
+                
+            </div>
+            <div>
+                <!--Botões de Ativação-->
+                <p id="a1" class="recents_see_more" onclick="primeira_api()">VER</p>
+                <p id="a2" class="recents_see_more" onclick="segunda_api()">VER MAIS...</p>
+                <p id="a3" class="recents_see_more" onclick="tercaira_api()">VER MAIS...</p>
+            </div>
+            <br>
+            <br>
+        </section>
         <br>
-        <div class="meus_videos">
-            
-        </div>
+        <h2>Playlists</h2>
         <br>
-        <br>
-        <div class="deu_erro">
-            <p id="iderro2" class="deu_erro" onclick="tentativa2()">Nenhum vídeo?(Tentar servidor 2)</p>
-            <p id="iderro3" class="deu_erro" onclick="tentativa3()">Nenhum vídeo?(Tentar servidor 3)</p>
-        </div>
-        <br>
-        <br>
+        <section class="playlist">
+            <div class="minhas_playlists">
+
+            </div>
+        </section>
     </main>
-    <footer style="background-color: rgb(50, 50, 50);">
-        <p style="color: white; text-align: center;">Criado por Gabriel Leão</p>
+    <!--Rodapé-->
+    <footer>
+
     </footer>
 </body>
-<!-- API número 1-->
+
+<!--JavaScript-->
+
+<!--API 1-->
 <script>
-    fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCaEPnWNVcMB50JqNzh3dOwA&maxResults=10&order=date&key=AIzaSyCNs_4OuZa4C7TZA9Nh6bDtHpJx8Hg6aeM")
-    .then((result)=>{
-        return result.json()
-    }).then((data)=>{
-        console.log(data)
-        let videos = data.items
-        let MeusVideos = document.querySelector(".meus_videos")
-        for(video of videos){
-            MeusVideos.innerHTML += `
-                <div class="video_div">
-                    <a class="video_link" href="https://youtu.be/${video.id.videoId}" target="_blank">
-                        <img class="video_thumb" src="${video.snippet.thumbnails.high.url}">
-                    <p class="video_title" style="color: white;">${video.snippet.title}</a>
-            `
-        }
-    })
-</script>
-<!-- API número 2-->
-<script>
-    function tentativa2() {
-        fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCaEPnWNVcMB50JqNzh3dOwA&maxResults=10&order=date&key=AIzaSyCUBas1bkTgGv0AqlUCWTTMmRIOZ1QFfuY")
+    let nextPageToken=""
+
+    function primeira_api(){
+        var botao = document.getElementById("a1");
+        botao.innerHTML="VER MAIS...";
+
+        fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCaEPnWNVcMB50JqNzh3dOwA&maxResults=10&order=date&key=AIzaSyCNs_4OuZa4C7TZA9Nh6bDtHpJx8Hg6aeM&pageToken="+nextPageToken)
         .then((result)=>{
             return result.json()
         }).then((data)=>{
             console.log(data)
             let videos = data.items
             let MeusVideos = document.querySelector(".meus_videos")
+            nextPageToken = data.nextPageToken
             for(video of videos){
                 MeusVideos.innerHTML += `
                     <div class="video_div">
                         <a class="video_link" href="https://youtu.be/${video.id.videoId}" target="_blank">
                             <img class="video_thumb" src="${video.snippet.thumbnails.high.url}">
-                        <p class="video_title">${video.snippet.title}</a>
+                            <p class="video_title" style="color: white;">${video.snippet.title}</a>
                 `
             }
-        })
 
-        var botao
-        var next
+            if(MeusVideos.innerHTML == ""){
+                console.log("Erro. Tentando na API número 2")
+                segunda_api();
 
-        botao = document.getElementById("iderro2")
-        next = document.getElementById("iderro3")
-        botao.style.display="none";
-        next.style.display="block";
-    
+                var botao1;
+                var botao2;
+
+                botao1 = document.getElementById("a1");
+                botao2 = document.getElementById("a2");
+
+                botao1.style.display="none";
+                botao2.style.display="initial";
+            }else{
+                console.log("Carregado com sucesso!")
+            }
+    })
     }
 </script>
-<!-- API número 3-->
+<!--API 2-->
 <script>
-    function tentativa3() {
-        fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCaEPnWNVcMB50JqNzh3dOwA&maxResults=10&order=date&key=AIzaSyDLCyYvYNtiNldO2XptazQ8NW9HqDX_uFM")
+    let nextPageToken2 = "";
+
+    function segunda_api(){
+        fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCaEPnWNVcMB50JqNzh3dOwA&maxResults=10&order=date&key=AIzaSyCUBas1bkTgGv0AqlUCWTTMmRIOZ1QFfuY&pageToken="+nextPageToken2)
         .then((result)=>{
             return result.json()
         }).then((data)=>{
             console.log(data)
             let videos = data.items
             let MeusVideos = document.querySelector(".meus_videos")
+            nextPageToken2 = data.nextPageToken
             for(video of videos){
                 MeusVideos.innerHTML += `
                     <div class="video_div">
                         <a class="video_link" href="https://youtu.be/${video.id.videoId}" target="_blank">
                             <img class="video_thumb" src="${video.snippet.thumbnails.high.url}">
-                        <p class="video_title">${video.snippet.title}</a>
+                            <p class="video_title" style="color: white;">${video.snippet.title}</a>
                 `
             }
+
+            if(MeusVideos.innerHTML == ""){
+                console.log("Erro. Tentando na API número 3")
+                terceira_api();
+
+                var botao2;
+                var botao3;
+
+                botao1 = document.getElementById("a2");
+                botao2 = document.getElementById("a3");
+
+                botao1.style.display="none";
+                botao2.style.display="initial";
+            }else{
+                console.log("Carregado com sucesso!")
+            }
         })
-
-        var botao
-
-        botao = document.getElementById("iderro3")
-        botao.style.display="none";
     }
 </script>
 </html>

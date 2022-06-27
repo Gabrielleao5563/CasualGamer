@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+* {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+#a2, #a3 {
+    display: none;
+}
+section.recent {
+    background-image: url('../html/images/pearl_mid.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 4px;
+}
+main {
+    background-color: rgb(20, 20, 20);
+}
+h2.my_videos_text {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: bolder;
+}
+div.video_div {
+    background-color: rgba(20, 20, 20, 0.700);
+}
+
+@media (max-width: 1023px){
+    div.video_div {
+        width: 100%;
+    }
+    a.video_link {
+        width: 100%;
+        text-decoration: none;
+    }
+    img.video_thumb {
+        width: 100%;
+    }
+    div.meus_videos {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 95%;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+    }
+    h2.my_videos_text {
+        font-size: 2.4em;
+    }
+}
+
+@media (min-width: 1024px){
+    div.video_div {
+        width: 16%;
+    }
+    a.video_link {
+        width: 100%;
+        text-decoration: none;
+    }
+    img.video_thumb {
+        width: 100%;
+    }
+    div.meus_videos {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 95%;
+        margin: auto;
+        align-items: center;
+        justify-content: space-around;
+    }
+    h2.my_videos_text {
+        font-size: 2.9em;
+    }
+}
+
+@media (min-width: 2160px){
+    h2.my_videos_text {
+        font-size: 3.8em;
+    }
+}

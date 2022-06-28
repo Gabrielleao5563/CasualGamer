@@ -5,8 +5,14 @@
     margin: 0px;
     border: 0px;
 }
-#a2, #a3 {
+#a2, #a3, #b2, #b3 {
     display: none;
+}
+p.video_title, a.video_link {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: bolder;
 }
 section.recent {
     background-image: url('../html/images/pearl_mid.jpg');
@@ -27,6 +33,52 @@ h2.my_videos_text {
 }
 div.video_div {
     background-color: rgba(20, 20, 20, 0.700);
+}
+.recents_see_more {
+    color: white;
+    background-color: rgb(255, 70, 85);
+    text-align: center;
+    margin: auto;
+    padding: 8px 2px 8px 2px;
+    border-radius: 6px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+.playlists_see_more {
+    color: white;
+    background-color: rgb(255, 70, 85);
+    text-align: center;
+    margin: auto;
+    padding: 8px 2px 8px 2px;
+    border-radius: 6px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+.recents_see_more:hover {
+    background-color: red;
+    transition-duration: 0.5s;
+}
+.playlists_see_more:hover {
+    background-color: red;
+    transition-duration: 0.5s;
+}
+.my_playlists_text {
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+section.playlist {
+    background-image: url('../html/images/breeze_mid.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 4px;
 }
 
 @media (max-width: 1023px){
@@ -51,6 +103,12 @@ div.video_div {
     }
     h2.my_videos_text {
         font-size: 2.4em;
+    }
+    .my_playlists_text {
+        font-size: 2.4em;
+    }
+    .recents_see_more, .playlists_see_more {
+        width: 95%;
     }
 }
 
@@ -77,10 +135,23 @@ div.video_div {
     h2.my_videos_text {
         font-size: 2.9em;
     }
+    .my_playlists_text {
+        font-size: 2.9em;
+    }
+    .recents_see_more, .playlists_see_more {
+        width: 30%;
+        font-size: 1.5em;
+    }
 }
 
 @media (min-width: 2160px){
     h2.my_videos_text {
         font-size: 3.8em;
+    }
+    .my_playlists_text {
+        font-size: 3.8em;
+    }
+    .recents_see_more, .playlists_see_more {
+        font-size: 2.4em;
     }
 }
